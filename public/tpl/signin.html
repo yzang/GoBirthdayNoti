@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+
+<div class="signin-page">
+<div class="signin-container" ng-controller="SigninFormController">
+    <!-- ngInclude: 'views/nav.html' -->
+
+    <div id="content" class="signin-content">
+        <!-- ngView:  -->
+        <section style="display: block">
+            <div class="page-signin">
+
+                <div class="signin-header">
+                    <section class="logo text-center">
+                        <h1><a href="#/" class="ng-binding">Fit eCity</a></h1>
+                    </section>
+                </div>
+
+                <div class="signin-body">
+                    <div class="signin-body-container">
+                        <div class="form-container">
+
+                            <form class="form-horizontal ng-pristine ng-valid">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <div class="input-group input-group-first">
+                                <span class="input-group-addon">
+                                    <i class="icon ion-ios7-person-outline"></i>
+                                </span>
+                                            <input type="text" class="form-control input-lg" name="username" ng-model="username" placeholder="Username">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="icon ion-ios7-locked-outline"></i>
+                                </span>
+                                            <input type="password" class="form-control input-lg" name="password" ng-model="password" placeholder="Password">
+                                        </div>
+                                    </div>
+
+                                    <div class="divider divider-lg"></div>
+                                    <div class="form-group">
+                                        <button class="btn btn-login" ng-click="login()">Log in</button>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</div>
