@@ -17,7 +17,7 @@ function sendNotification(){
 	Friends=require('../models/friend')
 	Devices=require('../models/device')
 	var date=new Date();
-	console.log("Friends:"Friends)
+	console.log("Friends:"+Friends)
 	if(Devices.length>0){
 		console.log("device found")
 		// console.log("Data:"+date.getDate()+" Month:"+date.getMonth())
