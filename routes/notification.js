@@ -1,7 +1,4 @@
- 
-var Sended=require('../models/sended')
-var Friends=require('../models/friend')
-var Devices=require('../models/device')
+
 var gcm = require('node-gcm');
 var message = new gcm.Message();
 var sender = new gcm.Sender('AIzaSyBi9ryCfCAoG-1w8uhyo0L_vIA4_fbazUk');
@@ -14,6 +11,9 @@ var registrationIds = [];
 
 
 function sendNotification(){
+	var Sended=require('../models/sended')
+	var Friends=require('../models/friend')
+	var Devices=require('../models/device')
 	var date=new Date();
 	if(Devices.length>0){
 		console.log("device found")
