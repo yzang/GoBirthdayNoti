@@ -19,6 +19,7 @@ function sendNotification(){
 		console.log("device found")
 		console.log("Data:"+date.getDate()+" Month:"+date.getMonth())
 		for (var i=0;i<Friends.length;i++){
+			console.log("I'm in friends, count:"+i)
 			if(Friends[i].remindOnBirthday&&Friends[i].day==date.getDate()&&Friends[i].month==(date.getMonth()+1)){
 				if(Sended.indexOf(Friends[i].id)>-1){
 					console.log("sended")
