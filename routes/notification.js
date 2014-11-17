@@ -67,7 +67,13 @@ function sendNotification(){
 
 }
 
-setInterval(sendNotification,20000);
+function startNofity(){
+	sendNotification();
+	setTimout(startNofity,20000)
+}
+
+startNofity();
+//setInterval(sendNotification,20000);
 
 // sender.send(message, registrationIds, 3, function (result) {
 //     console.log(result);
