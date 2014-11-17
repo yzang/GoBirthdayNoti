@@ -3,11 +3,11 @@ var Device=require('../models/device')
 
 app.post('/api/registerDevice',function(req,res){
   var regId = req.body.regId;
-  if(DEVICES.indexOf(regId)>-1){
+  if(global.DEVICES.indexOf(regId)>-1){
 
   }
   else{
-  	DEVICES.push(regId)
+  	global.DEVICES.push(regId)
   }
   
   res.end();
@@ -16,6 +16,6 @@ app.post('/api/registerDevice',function(req,res){
 
 app.get('/api/getDevices',function(req,res){
   
-    res.json(DEVICES);
+    res.json(global.DEVICES);
 
 })

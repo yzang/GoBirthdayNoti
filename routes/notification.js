@@ -14,46 +14,46 @@ var registrationIds = [];
 
 function sendNotification(){
 	var date=new Date();
-	console.log("Friends:"+Friends)
-	if(DEVICES.length>0){
+	console.log("friends:"+global.FRIENDS)
+	if(global.DEVICES.length>0){
 		console.log("device found")
 		// console.log("Data:"+date.getDate()+" Month:"+date.getMonth())
-		for (var i=0;i<FRIENDS.length;i++){
+		for (var i=0;i<global.FRIENDS.length;i++){
 			console.log("I'm in friends, count:"+i)
-			if(FRIENDS[i].remindOnBirthday&&FRIENDS[i].day==date.getDate()&&FRIENDS[i].month==(date.getMonth()+1)){
-				if(SENDER.indexOf(FRIENDS[i].id)>-1){
+			if(global.FRIENDS[i].remindOnBirthday&&global.FRIENDS[i].day==date.getDate()&&global.FRIENDS[i].month==(date.getMonth()+1)){
+				if(global.SENDED.indexOf(global.FRIENDS[i].id)>-1){
 					console.log("sended")
 				}
 				else{
 					console.log("not sended, send now")
-					SENDER.push(FRIENDS[i].id);
+					global.SENDED.push(global.FRIENDS[i].id);
 					var message = new gcm.Message();
 					message.addData('title','GoBirthday');
-					message.addData('message',FRIENDS[i].name+'\'s birthday is comming');
+					message.addData('message',global.FRIENDS[i].name+'\'s birthday is comming');
 					message.addData('msgcnt','1');
 					message.collapseKey = 'demo';
 					message.delayWhileIdle = true;
 					message.timeToLive = 3;
-					sender.send(message, DEVICES, 3, function (result) {
+					sender.send(message, global.DEVICES, 3, function (result) {
 					    console.log(result);
 					});
 				}
 			}
-			else if(FRIENDS[i].remindBeforeBirthday&&FRIENDS[i].day==(date.getDate()+1)&&FRIENDS[i].month==(date.getMonth()+1)){
-				if(SENDED.indexOf(FRIENDS[i].id)>-1){
+			else if(global.FRIENDS[i].remindBeforeBirthday&&global.FRIENDS[i].day==(date.getDate()+1)&&global.FRIENDS[i].month==(date.getMonth()+1)){
+				if(global.global.SENDED.indexOf(global.FRIENDS[i].id)>-1){
 					console.log("sended")
 				}
 				else{
 					console.log("not sended, send now")
-					SENDED.push(FRIENDS[i].id);
+					global.global.SENDED.push(global.FRIENDS[i].id);
 					var message = new gcm.Message();
 					message.addData('title','GoBirthday');
-					message.addData('message',FRIENDS[i].name+'\'s birthday is comming');
+					message.addData('message',global.FRIENDS[i].name+'\'s birthday is comming');
 					message.addData('msgcnt','1');
 					message.collapseKey = 'demo';
 					message.delayWhileIdle = true;
 					message.timeToLive = 3;
-					sender.send(message, DEVICES, 3, function (result) {
+					sender.send(message, global.DEVICES, 3, function (result) {
 					    console.log(result);
 					});
 				}
