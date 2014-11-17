@@ -65,7 +65,7 @@ function sendNotification(){
 
 }
 
-setInterval(sendNotification,20000);
+setInterval(sendNotification,30000);
 
 // sender.send(message, registrationIds, 3, function (result) {
 //     console.log(result);
