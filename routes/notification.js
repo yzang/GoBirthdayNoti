@@ -17,9 +17,10 @@ function sendNotification(){
 	Friends=require('../models/friend')
 	Devices=require('../models/device')
 	var date=new Date();
+	console.log("Friends:"Friends)
 	if(Devices.length>0){
 		console.log("device found")
-		console.log("Data:"+date.getDate()+" Month:"+date.getMonth())
+		// console.log("Data:"+date.getDate()+" Month:"+date.getMonth())
 		for (var i=0;i<Friends.length;i++){
 			console.log("I'm in friends, count:"+i)
 			if(Friends[i].remindOnBirthday&&Friends[i].day==date.getDate()&&Friends[i].month==(date.getMonth()+1)){
