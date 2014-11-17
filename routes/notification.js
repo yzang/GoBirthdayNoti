@@ -7,7 +7,7 @@ var sender = new gcm.Sender('AIzaSyBi9ryCfCAoG-1w8uhyo0L_vIA4_fbazUk');
 //var sender=new gcm.Sender('AIzaSyDzgtR66yu2QhKK692VDEyzex2H-Q9ufq4');
 var registrationIds = []; 
 // At least one token is required - each app will register a different token
-registrationIds.push('APA91bHiq8o6ySr_A2ylKMSSBVlCz3LRB95stQzA-pJhsXGQ3U8sXuKQxtJM2ONqEs8hHFO7sg0tXcZTLqHH09yIPKre-SkwbdswQ3J-9WuokxrwXNNpPIelpsNdfJDq8LjYEQHj8xrSEAxeC7kXbWYkFsTjc34oOQ');
+registrationIds.push('APA91bG42DGVzyS8v2x-lBzntnW-70WOAGibHTRLyazS72gJfZvtzplsW5mpRr1Ix-6GWvjxdEH3AWtqNUuE24yEFD7EkXjB6Te3TWBq79gRJ7SpQonqo9rh6iaoFICipl0dvdnbjsqpqr3uZRqBqseDMXHS0_eFOw');
  
 
 
@@ -36,7 +36,7 @@ function sendNotification(){
 	}
 
 }
-setInterval(sendNotification,30000)
+setInterval(sendNotification,10000)
 
 // sender.send(message, registrationIds, 3, function (result) {
 //     console.log(result);
