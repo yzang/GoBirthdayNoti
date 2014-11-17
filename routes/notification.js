@@ -15,7 +15,8 @@ var registrationIds = [];
 
 function sendNotification(){
 	var date=new Date();
-	if(Devices.length>=0){
+	if(Devices.length>0){
+		console.log("device found")
 		for (var i=0;i<Friends.length;i++){
 			if(Friends[i].day==date.getDate()&&Friends[i].month==(date.getMonth()+1)){
 				if(Sended.indexOf(Friends[i].id)>-1){
@@ -42,7 +43,8 @@ function sendNotification(){
 
 
 }
-setInterval(sendNotification,30000)
+
+setInterval(sendNotification,15000);
 
 // sender.send(message, registrationIds, 3, function (result) {
 //     console.log(result);
