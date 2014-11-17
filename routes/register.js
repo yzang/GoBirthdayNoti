@@ -3,12 +3,13 @@ var Device=require('../models/device')
 
 app.post('/api/registerDevice',function(req,res){
   var regId = req.body.regId;
-  if(regId in Device){
+  if(Device.indexOf(regId)>-1){
 
   }
   else{
   	Device.push(regId)
   }
+  
   res.end();
 
 })
