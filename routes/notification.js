@@ -69,7 +69,7 @@ function sendNotification(){
 
 function startNofity(){
 	sendNotification();
-	setTimout(startNofity,20000)
+	setTimeout(startNofity,20000)
 }
 
 startNofity();
