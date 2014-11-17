@@ -1,3 +1,3 @@
-var registrationIds = []; 
+var device = []; 
 
-module.exports = registrationIds;
+module.exports = device;
