@@ -19,7 +19,26 @@ function sendNotification(){
 		console.log("device found")
 		console.log("Data:"+date)
 		for (var i=0;i<Friends.length;i++){
-			if(Friends[i].day==date.getDate()&&Friends[i].month==(date.getMonth()+1)){
+			if(Friends[i].remindOnBirthday&&Friends[i].day==date.getDate()&&Friends[i].month==(date.getMonth()+1)){
+				if(Sended.indexOf(Friends[i].id)>-1){
+					console.log("sended")
+				}
+				else{
+					console.log("not sended, send now")
+					Sended.push(Friends[i].id);
+					var message = new gcm.Message();
+					message.addData('title','GoBirthday');
+					message.addData('message',Friends[i].name+'\'s birthday is comming');
+					message.addData('msgcnt','1');
+					message.collapseKey = 'demo';
+					message.delayWhileIdle = true;
+					message.timeToLive = 3;
+					sender.send(message, Devices, 3, function (result) {
+					    console.log(result);
+					});
+				}
+			}
+			else if(Friends[i].remindBeforeBirthday&&Friends[i].day==(date.getDate()+1)&&Friends[i].month==(date.getMonth()+1)){
 				if(Sended.indexOf(Friends[i].id)>-1){
 					console.log("sended")
 				}
