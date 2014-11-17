@@ -11,20 +11,18 @@ var registrationIds = [];
 // At least one token is required - each app will register a different token
 //registrationIds.push('APA91bG42DGVzyS8v2x-lBzntnW-70WOAGibHTRLyazS72gJfZvtzplsW5mpRr1Ix-6GWvjxdEH3AWtqNUuE24yEFD7EkXjB6Te3TWBq79gRJ7SpQonqo9rh6iaoFICipl0dvdnbjsqpqr3uZRqBqseDMXHS0_eFOw');
  
-Sended=[]
 
 
 function sendNotification(){
 	var date=new Date();
-	console.log("device:"+Devices)
-
-	if(Devices.length>0){
+	if(Devices.length>=0){
 		for (var i=0;i<Friends.length;i++){
-			if(Friends[i].day==date.getDate()&&Friends[i].month==date.getMonth()+1){
-				if(Friends[i].id in Sended){
-
+			if(Friends[i].day==date.getDate()&&Friends[i].month==(date.getMonth()+1)){
+				if(Sended.indexOf(Friends[i].id)>-1){
+					console.log("sended")
 				}
 				else{
+					console.log("not sended, send now")
 					Sended.push(Friends[i].id);
 					var message = new gcm.Message();
 					message.addData('title','GoBirthday');
@@ -39,8 +37,7 @@ function sendNotification(){
 				}
 			}
 		}
-		console.log("friend:"+Friends)
-		console.log("sended"+Sended)
+
 	}
 
 
