@@ -19,7 +19,7 @@ message.timeToLive = 3;
 function sendNotification(){
 	console.log('send'+JSON.stringify(Friends))
 }
-setInterval(sendNotification,5000)
+//setInterval(sendNotification,10000)
 
 // sender.send(message, registrationIds, 3, function (result) {
 //     console.log(result);
