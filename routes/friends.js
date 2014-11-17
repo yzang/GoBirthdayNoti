@@ -7,8 +7,8 @@ app.post('/api/syncFriends',function(req,res){
   var remindOnBirthday=req.body.remindOnBirthday;
   var remindBeforeBirthday=req.body.remindBeforeBirthday
   for (var i=0;i<friends.length;i++){
-  	var elem={"id":friends[i].id,"name":friends[i].name,"day":friends[i].day,"month":friends[i].month,"year":friends[i].year,"remindOnBirthday":remindOnBirthday,"remindBeforeBirthday":remindBeforeBirthday};
-	Friend.push(elem)
+  	 var elem={"id":friends[i].id,"name":friends[i].name,"day":friends[i].day,"month":friends[i].month,"year":friends[i].year,"remindOnBirthday":remindOnBirthday,"remindBeforeBirthday":remindBeforeBirthday};
+	   Friend.push(elem)
   }
   res.end();
 
