@@ -1,5 +1,6 @@
 app=require('../app')
 var Friend = require('../models/friend');
+var Sended=require('../models/sended');
 
 app.post('/api/syncFriends',function(req,res){
   var friends = req.body.friends;
@@ -17,5 +18,11 @@ app.post('/api/syncFriends',function(req,res){
 app.get('/api/getFriends',function(req,res){
   
     res.json(Friend);
+
+})
+
+app.get('/api/getSended',function(req,res){
+  
+    res.json(Sended);
 
 })
