@@ -28,8 +28,8 @@ app.get('/api/getSended',function(req,res){
 })
 
 app.post('api/deleteFriend',function(req,res){
-  var friend=req.body.friend;
-  var index=Sended.indexOf(friend.id)
+  var id=req.body.friendId;
+  var index=Sended.indexOf(id)
   if(index>-1){
     Sended.splice(index,1)
   }
