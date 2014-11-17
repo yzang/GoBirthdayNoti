@@ -27,7 +27,7 @@ app.get('/api/getSended',function(req,res){
 
 })
 
-app.post('api/deleteFriend',function(req,res){
+app.post('/api/deleteFriend',function(req,res){
   var id=req.body.friendId;
   var index=global.SENDED.indexOf(id)
   if(index>-1){
